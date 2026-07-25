@@ -41,7 +41,7 @@ export const userSlice = apiSlice.injectEndpoints({
                 method: "PATCH",
                 body: data,
             }),
-            invalidatesTags: ["User", "Auth"],
+            invalidatesTags: ["User", "Auth", "Job"],
         }),
 
         // 🗑 Delete Job

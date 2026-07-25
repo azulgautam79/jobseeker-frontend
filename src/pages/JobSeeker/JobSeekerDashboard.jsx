@@ -155,6 +155,8 @@ const JobSeekerDashboard = () => {
         </div>
     );
 
+    const [, setAllJobs] = useState([]);
+
     const toggleSaveJobs = async (
         jobId,
         isSaved,
