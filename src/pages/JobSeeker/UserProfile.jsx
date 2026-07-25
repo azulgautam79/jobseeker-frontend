@@ -209,7 +209,7 @@ const UserProfile = () => {
         setSaving(true);
 
         try {
-            const res = await updateProfile(formData).unwrap();
+            await updateProfile(formData).unwrap();
             setProfileData(formData);
             updateUser?.({
                 ...user,
@@ -259,8 +259,6 @@ const UserProfile = () => {
     const avatarFileName = formData?.avatar
         ? decodeURIComponent(formData.avatar.split("/").pop().split("?")[0])
         : "";
-
-    console.log(formData)
 
     return (
         <div className="bg-linear-to-br from-blue-50 via-white to-purple-50">

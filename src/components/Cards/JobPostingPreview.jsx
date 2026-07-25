@@ -1,6 +1,6 @@
 import {
     MapPin,
-    DollarSign,
+    IndianRupee,
     ArrowLeft,
     Building2,
     Clock,
@@ -98,7 +98,7 @@ const JobPostingPreview = ({ formData, setIsPreview }) => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-3 bg-linear-to-r from-emerald-500 to-teal-500 rounded-xl">
-                                                <DollarSign className="h-4 md:h-6 w-4 md:w-6 text-white" />
+                                                <IndianRupee className="h-4 md:h-6 w-4 md:w-6 text-white" />
                                             </div>
                                             <div>
                                                 <h3 className="text-sm font-semibold text-gray-900 mb-1">
@@ -118,7 +118,7 @@ const JobPostingPreview = ({ formData, setIsPreview }) => {
                                                     }
                                                     {formData.salaryMax.toLocaleString()}
                                                     <span className="text-sm md:text-lg text-gray-600 font-normal ml-1">
-                                                        per year
+                                                        per month
                                                     </span>
                                                 </div>
                                             </div>

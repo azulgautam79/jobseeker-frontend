@@ -1,6 +1,6 @@
 import {
     MapPin,
-    DollarSign,
+    IndianRupee,
     Building2,
     Clock,
     Users,
@@ -195,7 +195,7 @@ const JobDetails = () => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-3 bg-linear-to-r from-emerald-500 to-teal-500 rounded-xl">
-                                                <DollarSign className='h-6 w-6 text-white' />
+                                                <IndianRupee className='h-6 w-6 text-white' />
                                             </div>
                                             <div>
                                                 <h3 className="text-sm font-semibold text-gray-900 mb-1">
@@ -204,7 +204,7 @@ const JobDetails = () => {
                                                 <div className="text-lg font-bold text-gray-900">
                                                     {jobDetails?.salaryMin} - {jobDetails?.salaryMax}
                                                     <span className="text-lg text-gray-600 font-normal ml-1">
-                                                        per year
+                                                        per month
                                                     </span>
                                                 </div>
                                             </div>
