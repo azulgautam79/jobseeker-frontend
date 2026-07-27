@@ -56,7 +56,7 @@ export const ALLOWED_RESUME_TYPES = [
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
-export const MAX_RESUME_SIZE = 5 * 1024 * 1024; // 5MB
+export const MAX_RESUME_SIZE = 2 * 1024 * 1024; // 5MB
 
 // export const getInitials = (name) => {
 //     return name
