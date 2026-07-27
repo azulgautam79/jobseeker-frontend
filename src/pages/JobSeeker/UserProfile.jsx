@@ -108,6 +108,22 @@ const UserProfile = () => {
 
     //! Resume Upload
     const handleResumeUpload = async (file) => {
+
+
+        if (!file) return;
+
+        // Validate file type
+        if (file.type !== "application/pdf") {
+            toast.error("Only PDF files are allowed");
+            return;
+        }
+
+        // Validate file size
+        if (file.size > MAX_RESUME_SIZE) {
+            toast.error("File size must be less than 2MB");
+            return;
+        }
+
         setUploading((prev) => ({
             ...prev,
             resume: true,
@@ -142,7 +158,8 @@ const UserProfile = () => {
 
         if (!ALLOWED_RESUME_TYPES.includes(file.type)) {
             toast.error(
-                "Only PDF, DOC and DOCX files are allowed"
+                // "Only PDF, DOC and DOCX files are allowed"
+                "Only PDF is allowed"
             );
 
             e.target.value = "";
@@ -151,7 +168,7 @@ const UserProfile = () => {
 
         if (file.size > MAX_RESUME_SIZE) {
             toast.error(
-                "File size must be less than 5MB"
+                "File size must be less than 2MB"
             );
 
             e.target.value = "";
@@ -259,6 +276,8 @@ const UserProfile = () => {
     const avatarFileName = formData?.avatar
         ? decodeURIComponent(formData.avatar.split("/").pop().split("?")[0])
         : "";
+
+    console.log(formData);
 
     return (
         <div className="bg-linear-to-br from-blue-50 via-white to-purple-50">
@@ -392,7 +411,7 @@ const UserProfile = () => {
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
                                             placeholder="e.g. Kathmandu"
                                         />
-                                    </div>
+                                    </div> 
                                 </div>
                                 {formData.resume ? (
                                     <div className="flex items-center gap-2">
@@ -421,14 +440,14 @@ const UserProfile = () => {
                                     >
                                         <input
                                             type="file"
-                                            accept=".pdf,.doc,.docx"
+                                            accept=".pdf"
                                             onChange={handleResumeChange}
                                             className="hidden"
                                             id="resumeUpload"
                                         />
 
                                         <label htmlFor="resumeUpload" className="cursor-pointer text-blue-600">
-                                            Click or Drag & Drop Resume (Max 2MB)
+                                            Click or Drag & Drop PDF Resume (Max 2MB)
                                         </label>
                                     </div>
                                 )}
